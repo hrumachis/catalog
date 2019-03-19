@@ -7,6 +7,8 @@
         <title>{{ isset($title) ? "$title | " : null }}{{ config( 'app.name' ) }}</title>
     </head>
     <body>
-        @yield( 'view' )
+        <div id="app"></div>
+
+        <script src="{{ asset( 'js/main.js' ) }}"></script>
     </body>
 </html>

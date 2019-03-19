@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+  
+        "target": "es5",                          
+        "module": "commonjs",                     
+        "strict": true,   
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "sourceMap": false                        
+    },
+    "include": [
+        "resources/**/*",
+      ],
+    "exclude": [
+        "node_modules"
+    ]
+}

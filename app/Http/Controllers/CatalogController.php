@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function main() {
-        $data = array(
-            'title' => "Catalog"
-        );
+    public $data = array(
+        'title' => "Catalog"
+    );
 
-        return view( 'catalog' )->with( $data );
+    public function main() {
+        return view( 'app' )->with( $this->data );
     }
 }
+
