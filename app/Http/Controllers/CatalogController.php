@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class CatalogController extends Controller
 {
     public $data = array(
-        'title' => "Catalog"
+        'title' => "Digital Catalog"
     );
 
     public function main() {

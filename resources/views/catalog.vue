@@ -1,6 +1,6 @@
 <template>
     <div id="Catalog">
-        Catalog
+        
     </div>
 </template>
 
@@ -12,12 +12,15 @@
     } )
     export default class ViewCatalog extends Vue {
         // Initial variables
+        
         mounted = false;
     }
 </script>
 
 <style lang="scss">
     @import '~@/variables';
+
+
     
     body {
         background-color: $green;
