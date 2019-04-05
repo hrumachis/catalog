@@ -8,7 +8,7 @@ $factory->define( App\Product::class, function ( Faker $faker ) {
     return [
         'title' => $faker->text( rand( 10, 50 ) ),
         'price' => $faker->randomFloat( 2, 1, 9999 ),
-        'src' => '/catalog/public/images/products/' . $group . '-' . rand( 0, 10 ) . '.jpg',
+        'src' => '/images/products/' . $group . '-' . rand( 0, 10 ) . '.jpg',
         'groups' => $group
     ];
 } );
