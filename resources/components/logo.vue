@@ -1,7 +1,7 @@
 <template>
     <div class="app-logo">
         <!-- * Image -->
-        <img src="images/logo.png">
+        <img :src="getPathOrigin + '/images/logo.png'">
 
         <div class="text-block">
             <!-- * Name -->
@@ -15,7 +15,9 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator'
-    @Component({ name: "app-logo", }) export default class AppLogo extends Vue {}
+    @Component({ name: "app-logo", }) export default class AppLogo extends Vue {
+        get getPathOrigin(): string { return `${ window.location.origin }${ ( this as any ).$router.history.base }/`; }
+    }
 </script>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="goTo" class="app-cart" :class="[ { 'active': getRoot == 'Cart' && isCartLoaded }, { 'loading': !isCartLoaded } ]">
+    <div v-on:click="goTo" class="app-cart" :class="[ { 'active': isActive && isCartLoaded }, { 'loading': !isCartLoaded } ]">
         <!-- Padded Content -->
         <div class="wrapper">
             <!-- * Title -->
@@ -71,6 +71,7 @@
         get getRoot(): string { return String( this.$router.currentRoute.name ); }
         get getChunk(): ChunkElement[] { return this.$store.getters.getCartChunk; }
         get isCartLoaded(): boolean { return this.$store.getters.isCartLoaded; }
+        get isActive() : boolean{ return this.getRoot == "Cart" || this.getRoot == "CartShared"; }
         get totalItems(): number { return this.getChunk.length; }
         get totalPrice(): number {
             let value: number = 0;

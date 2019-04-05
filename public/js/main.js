@@ -2365,6 +2365,7 @@ let AppCart = class AppCart extends vue_property_decorator__WEBPACK_IMPORTED_MOD
     get getRoot() { return String(this.$router.currentRoute.name); }
     get getChunk() { return this.$store.getters.getCartChunk; }
     get isCartLoaded() { return this.$store.getters.isCartLoaded; }
+    get isActive() { return this.getRoot == "Cart" || this.getRoot == "CartShared"; }
     get totalItems() { return this.getChunk.length; }
     get totalPrice() {
         let value = 0;
@@ -2527,6 +2528,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 };
 
 let AppLogo = class AppLogo extends vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__["Vue"] {
+    get getPathOrigin() { return `${window.location.origin}${this.$router.history.base}/`; }
 };
 AppLogo = __decorate([
     Object(vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__["Component"])({ name: "app-logo", })
@@ -3337,7 +3339,7 @@ var render = function() {
     {
       staticClass: "app-cart",
       class: [
-        { active: _vm.getRoot == "Cart" && _vm.isCartLoaded },
+        { active: _vm.isActive && _vm.isCartLoaded },
         { loading: !_vm.isCartLoaded }
       ],
       on: { click: _vm.goTo }
@@ -3492,21 +3494,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "app-logo" }, [
+    _c("img", { attrs: { src: _vm.getPathOrigin + "/images/logo.png" } }),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "app-logo" }, [
-      _c("img", { attrs: { src: "images/logo.png" } }),
+    return _c("div", { staticClass: "text-block" }, [
+      _c("span", { staticClass: "name" }, [_vm._v("Indra")]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-block" }, [
-        _c("span", { staticClass: "name" }, [_vm._v("Indra")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "undertext" }, [_vm._v("Digital Catalog")])
-      ])
+      _c("div", { staticClass: "undertext" }, [_vm._v("Digital Catalog")])
     ])
   }
 ]
