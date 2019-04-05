@@ -1,6 +1,6 @@
-# <img src="https://i.imgur.com/7hvjdOa.png"  width="512">
+# <img src="https://i.imgur.com/7hvjdOa.png"  width="256">
 
-**<big>Indra Digital Catalog</big>**
+**<big>Indra Digital Catalog</big>**<br>
 Is a modern web application with fluent experience for a users to find things they need.
 
 - *Works with browsers such as **Chrome, Opera, Firefox, Microsoft Edge, Safari***.
@@ -137,5 +137,5 @@ As you see in every vue view there is unique classes for individual elements. So
 **<big>Vue Views</big>**
 
 # Credits
-<img src="/icons-c75a9472175cc17394ba6428d867fbcf/favicon-32x32.png" align="top" /> [StackEdit](https://stackedit.io)  --- For neat readme editing tool.
+<img src="https://stackedit.io/icons-c75a9472175cc17394ba6428d867fbcf/favicon-32x32.png" align="top" /> [StackEdit](https://stackedit.io)  --- For neat readme editing tool.
 
