@@ -124,14 +124,14 @@ As mentioned most of routing happens in client side using  **.vue** files.  Belo
 **<big>SCSS</big>**<br>
 As you see in every vue view there is unique classes for individual elements. So what style code contains ***default.scss*** file? **default.scss*** file is for: <br>
 * HTML elements such as ***body, html, a, span, input, button ...***
-* Class library for abstract styles such as ***.flex, .margin, .position, .visibility ...***<br>
+* Class library for abstract styles such as ***.flex, .margin, .position, .visibility ...*** <br>
  We use library idea from amazing project  <img src="https://getuikit.com/images/favicon.png" width="32" align="top"> **[UIkit](https://getuikit.com/)**<br>
  Most of style solutions is used from UIkit.
 
 **What else about style?**<br>
 * **default.scss*** file might contain style classes which is't used, but  they can be needed later. 
 * ***_variables.scss*** file contains all SCSS variables. 
-* What's ***function scaling()*** used for ?
+* What's ***function scaling()*** used for ?<br>
    We use this function to change value from *absolute length unit* to *relative length unit*, from ***pixels*** to ***vw*** . Using ***vw*** elements scale proportionally to screen dimensions. There is exception for grid element, goal is to use maximum visual space, that's why we keep their original size.
 
 # Credits
