@@ -12,6 +12,5 @@
     */
     
     Route::get( '/', 'CatalogController@main' );
-    Route::get('/cart', function () {
-        return view('cart');
-    });
+    Route::get( '/cart', 'CatalogController@main' );
+    Route::get( '/cart/{base64}', 'CatalogController@main' );

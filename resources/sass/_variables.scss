@@ -1,43 +1,41 @@
-// Size
+// --> Size
 $size-pc: 1200px;
+$size-mobile: 640px;
 
-// Body
+$size-header: 80px;
+
+// --> Body
 $body-bg: #222;
 
-// Fonts
+// --> Font
 $font-Nunito: "Nunito", sans-serif;
 $font-SegoeUI: Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;;
 
-// Font size
+// --> Font size
 $font-size-base: 16px;
 $font-size-h1: 60px;
 $font-size-h2: 40px;
 $font-size-h3: 30px;
 $font-size-h4: 25px;
-$font-size-h5: 16px;
+$font-size-h5: 17px;
+$font-size-h6: 14px;
+$font-size-h7: 12px;
+$font-size-h8: 10px;
 
-// Padding
+// --> Padding
 $pad-small: 10px;
 $pad-normal: 20px;
 $pad-large: 40px;
 $pad-xlarge: 80x;
 
-// Colors
+// --> Color
+$col-primary: #f3651e;
+$col-highlight: rgba( 255, 255, 255, .05 );
 $col-font-basic: #eee;
 $col-font-highlight: white;
-$col-primary: #f3651e;
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$col-font-darklight: #111;
 
-// Methods
+// --> Methods
 @function scaling( $target ) { 
     $vw-context: ( 1200*.01 ) * 1px;
     @return ( $target/$vw-context ) * 1vw;

@@ -1,71 +1,136 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# <img src="https://i.imgur.com/7hvjdOa.png"  width="512">
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+**<big>Indra Digital Catalog</big>**
+Is a modern web application with fluent experience for a users to find things they need.
 
-## About Laravel
+- Works with browsers such as Chrome, Opera, Firefox, Microsoft Edge, Safari.
+- Supports most of mobile browsers.
+- High resolution screen support.
+- Modern, intuitive design.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**<big>Features</big>**
+- Rich items listing in a grid mode.
+- Ability to save favourite items into cart.
+- Share cart content with others.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# For Developers
+Want to take a peek into code? Well wait, read this before jumping into rabbit hole.
+Project is in alpha state, it works, has good foundation, but it's still hungry for code.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Run Application Locally
 
-## Learning Laravel
+ 1. Make sure you have  installed web development environment such as [WampServer](http://www.wampserver.com/en/) or [XAMPP](https://www.apachefriends.org/index.html).
+ 2. **[Download](https://github.com/hrumachis/catalog)** project .zip and extract to corresponding folder. 
+	 WampServer:  `C:\wamp64\www\`.
+	 XAMPP:  `C:\xampp\htdocs\`.
+ 3. **[Download](https://getcomposer.org/Composer-Setup.exe)** [Composer](https://getcomposer.org/) dependency manager for PHP and install it.
+ 4. Run your Apache server
+ 5. Open [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/) Create MySQL Database
+     Database: digital-catalog
+	 Username: root
+	 Password: *empty*
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Application Project
+*Project created using <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" width="32" align="top"> [Laravel](https://laravel.com/) framework.*
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+>**Server side**
+<small>Logic: **PHP** ^7.2.4</small>
+<small>Database: **MySQL** ^5.7.21</small>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
+>**Client side**
+<small>Logic: **TypeScript**, targeting **ESNext**</small>
+<small>Templates **Vue  / Blade**</small>
+<small>Markups: **HTML5**</small>
+<small>Style: **SASS**</small>
 
-## Contributing
+## Structure
+Below you can see directories which are mostly used. The main structure which was generated by Laravel is slighty changed by having few additional folders within *resources* directive. Why we add additional folders? Such changes have been made to support objective **[TypeScript](https://www.typescriptlang.org/)** and **[Vue routing](https://vuejs.org/v2/guide/routing.html)**. Yes, Vue routing, we think that client serving processes should stay on client side and processes which needs authorisation have to be done in our servers. This way not only we provide more interactive experience to user but also minimize the weight on servers. We want to deliver website view fast as we can, in that mather we mainly use API requeasts to get data.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    * app
+    	* Http
+    		# Controllers
+    		# Resources
+    * database
+    	# factories
+    	# migrations
+    	# seeds
+    * public
+    * resources
+    	# components // Vue components
+    	# models // TypeScript interfaces, abstracts
+    	# sass
+    	# ts // TypeScript handlers
+    	# views // .vue and .blade
+    	api.ts // API requeasts (Axios)
+    	main.ts
+    	router.ts // Vue routes (Vue router)
+    	store.ts // Variables shared via components (Vuex)
+    	vue-shim.ts // Targets ts compiler to .vue files
+    * routes
+<br>
 
-## Security Vulnerabilities
+**<big>Vue Views</big>**
+As mentioned most of routing happens in client side using  **.vue** files.  Below you can see template format which we use for all **.vue** files to keep code organised and tidy. 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    <template>
+	    // View content HTML5
+    </template>
+    
+    <script lang="ts">
+    ...imports
+    
+    @Component(
+	    // Few vue component parameters such as { name, components, props }
+    )
+    export default class NameView extends Vue {
+	    ... Variables
+	    
+	    // ---> Initialize parameters
+		created():  void { ... initialised variables before view }
+		mounted():  void { ... initialised variables after view }
+		
+		// ---> Initialize parameters
+		build(): void {
+			... Event listeners
+			... View build functions
+		}
+		
+		// ---> Setters
+		... Setters
+		
+		// ---> Getters || Computers
+		... Getters, setters
+		
+		// ---> Methods
+		// -> Events
+		.. Event listeners, watchers
 
-## License
+		// -> Actions
+		... All needed methods
+    }
+    </script
+    
+    <style lang="scss">
+	    // Unique SCSS classes for individual elements
+    </style>
+ <br>
+ 
+**<big>SCSS</big>**
+As you see in every vue view there is unique classes for individual elements. So what style code contains ***default.scss*** file? **default.scss*** file is for: 
+* HTML elements such as ***body, html, a, span, input, button ...***
+* Class library for abstract styles such as ***.flex, .margin, .position, .visibility ...***
+ We use library idea from amazing project  <img src="https://getuikit.com/images/favicon.png" width="32" align="top"> **[UIkit](https://getuikit.com/)**
+ Most of style solutions is used from UIkit.
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**What else about style?**
+* There can be style classes in ***default.scss*** which is not used, but might be need in future. 
+* ***_variables.scss*** file contains all SCSS variables. 
+* What's ***function scaling()*** for ?
+   We use this function to transform pixels into viewport width points ***vw*** . Using ***vw*** we create scaling elements by screen dimensions. There is exception for grid elements, to use maximum visual space we keep their original size.
+
+# Credits
+<img src="/icons-c75a9472175cc17394ba6428d867fbcf/favicon-32x32.png" align="top" /> [StackEdit](https://stackedit.io) 
+ For neat readme editing tool.
+

@@ -1,6 +1,6 @@
 
 // Fonts
-@import url( 'https://fonts.googleapis.com/css?family=Nunito' );
+// @import url( 'https://fonts.googleapis.com/css?family=Nunito' );
 
 // Variables
 @import 'variables';
@@ -8,24 +8,35 @@
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
 
+
+html, body, #app {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
 body {
-    margin: 0;
+    backface-visibility: hidden;
+    background-color: $body-bg;
+    color: $col-font-basic;
     font-family: $font-SegoeUI;
     font-size: 0.9rem;
     font-weight: 400;
+    /* font-smoothing */ -webkit-font-smoothing: antialiased;
     line-height: 1.6;
-    color: $col-font-basic;
+    margin: 0;
+    /* osx-font-smoothing */ -moz-osx-font-smoothing: grayscale;
+    /* tap-highlight-color */ -webkit-tap-highlight-color: transparent;
     text-align: left;
-    background-color: $body-bg;
-
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    /* touch-callout */ -webkit-touch-callout: none;
     user-select: none;
+}
+
+a { text-decoration: none; color: white; }
+
+img, svg, button {
+    backface-visibility: hidden;
 }
 
 svg {
@@ -33,20 +44,277 @@ svg {
     stroke: currentColor;
 }
 
+.view {
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    padding: scaling( $pad-normal );
+    position: relative;
+    width: 100%;
+
+    @media ( max-width: $size-pc ) {
+        padding: 0;
+    }
+}
+
+// ----------------------> Text ---------------------- //
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.label span {
+    font-size: scaling( $font-size-h6 );
+    font-weight: 100;
+    letter-spacing: scaling( .5px );
+    opacity: .6;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+.label.small { font-size: scaling( $font-size-h7 ); }
+
+@media ( max-width: $size-pc ) {
+    .label span {
+        font-size: $font-size-h6;
+        letter-spacing: .5px;
+    }
+    .label.small { font-size: $font-size-h7; }
+}
+
+// ----------------------> Icon ---------------------- //
+.app-icon {
+    cursor: pointer;
+    margin: scaling( 14px );
+    width: scaling( 20px );
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+
+    &::before {
+        background-color: rgba( 255, 255, 255, 0.05 );
+        bottom: scaling( -10px );
+        content: '';
+        left: scaling( -10px );
+        opacity: 0;
+        position: absolute;
+        right: scaling( -10px );
+        top: scaling( -10px );
+        transition: opacity 0.3s;
+    }
+
+    svg { opacity: 0.2; transition: opacity 0.3s; }
+
+    &:hover, &.active {
+        transform: scale(1.1);
+
+        &::before { opacity: 1; }
+        svg { opacity: 1; }
+    }
+
+    @media ( max-width: $size-pc ) {
+        margin: 10px;
+        width: 20px;
+
+        &::before {
+            bottom: -10px;
+            left: -10px;
+            right: -10px;
+            top: -10px;
+        }
+    }
+}
+
+// ----------------------> Visibility ---------------------- //
+.hidden {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+@media ( max-width: $size-pc ) {
+    .hidden\@pc {
+        display: none !important;
+        pointer-events: none !important;
+    }
+}
+
+@media ( max-width: $size-mobile ) {
+    .hidden\@mobile {
+        display: none !important;
+        pointer-events: none !important;
+    }
+}
+
+@media ( min-width: $size-pc + 1px ) {
+    .hidden\@not-tablet {
+        display: none !important;
+        pointer-events: none !important;
+    }
+}
+
+// ----------------------> Button ---------------------- //
+button {
+    background-color: $col-primary;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: $font-SegoeUI;
+    font-size: $font-size-h6;
+    font-weight: 400;
+    letter-spacing: 1px;
+    outline: none;
+    padding: 10px 20px;
+    position: relative;
+    text-transform: uppercase;
+    transition: transform .3s ease-out;
+
+    &.scale {
+        font-size: scaling( $font-size-h6 );
+        letter-spacing: scaling( 1px );
+        padding: scaling( 10px ) scaling( 20px );
+
+        @media ( max-width: $size-pc ) {
+            font-size: $font-size-h6;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+        }
+    }
+
+    &:hover {
+         // Button hover effects
+    }
+
+    &.secondary {
+        background-color: $col-highlight;
+        color: rgba( 255, 255, 255, 0.4 );
+
+        &:hover {
+            color: white;
+            transform: scale( 1.1 );
+        }
+    }
+}
+
+.button-icon {
+    background-color: transparent;
+    color: white;
+    display: block;
+    height: scaling( 70px );
+    margin-right: scaling( $pad-normal );
+    padding: scaling( 10px );
+    position: relative;
+    transition: transform .2s ease-in-out, background-color .3s ;
+    width: scaling( 70px );
+
+    .icon { opacity: .5; transition: opacity .3s; }
+    .wrapper { height: 100%; position: relative; width: 100%; }
+    .app-svg { width: 50%; }
+
+    &:hover, &.active {
+        background-color: rgba( 255, 255, 255, .05 );
+        transform: scale( 1.1 );
+        .icon { opacity: 1; }
+    }
+
+    @media ( max-width: $size-pc ) { 
+        box-sizing: border-box;
+        height: 50px;
+        margin-right: 0;
+        padding: 10px;
+        position: relative;
+        width: 50px;
+
+        .app-svg { width: 60%; }
+    }
+}
+
+.button-corner {
+    cursor: pointer;
+
+    &::after {
+        bottom: 0px;
+        border: solid scaling( 5px ) white;
+        border-top-color: transparent !important;
+        border-left-color: transparent !important;
+        content: '';
+        height: 0px;
+        opacity: .2;
+        position: absolute;
+        right: 0px;
+        transition: opacity .3s, border-color .3s;
+        width: 0px;
+    }
+
+    &:hover, .active {
+        &::after { border-color: $col-primary; opacity: 1;}
+    }
+
+    @media ( max-width: $size-pc ) { 
+        &::after {
+            border-width: 4px;
+        }
+    }
+}
+
+// ----------------------> Input ---------------------- //
+input {
+    background-color: $col-highlight;
+    color: rgba( 255, 255, 255, 0.8 );
+    border: none;
+    font-size: $font-size-h6;
+    font-weight: 100;
+    outline: none;
+    padding: 10px;
+
+    &.scale { 
+        font-size: scaling( $font-size-h6 );
+        padding: scaling( 10px );
+
+        @media ( max-width: $size-pc ) {
+            font-size:  $font-size-h6;
+            padding: 10px;
+        }
+    }
+}
+
 // ----------------------> Grid ---------------------- //
 .grid {
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
 }
+
+// ----------------------> Color ---------------------- //
+.col-primary { color: $col-primary; }
+.col-darker { color: #868686; }
 
 // ----------------------> Height ---------------------- //
 .vh-full { height: 100%; }
+.vh-half { height: 50%; }
 
 // ----------------------> Width ---------------------- //
+.vw-full { width: 100%; }
 .vw-1-2 { width: 50%; }
+
+// ----------------------> Padding ---------------------- //
+.pad-large { padding: scaling( $pad-large ); }
+
+// ----------------------> Margin ---------------------- //
+.margin-left {
+    margin-left: scaling( $pad-large );
+
+    @media ( max-width: $size-pc ) { margin-left: $pad-large; }
+}
+.marg-bottom {
+    margin-bottom: scaling( $pad-normal );
+
+    @media ( max-width: $size-pc ) { margin-bottom: $pad-normal; }
+}
+.marg-s-bottom {
+    margin-bottom: scaling( $pad-small );
+    @media ( max-width: $size-pc ) { margin-bottom: $pad-small; }
+}
+// ----------------------> Float ---------------------- //
+.float-right { float: right; }
 
 // ----------------------> Flex ---------------------- //
 .flex { display: flex; }
@@ -56,9 +324,20 @@ svg {
 .flex-middle {
     align-items: center;
 }
+.flex-column {
+    flex-direction: column;
+}
 
 // ----------------------> Position ---------------------- //
-[class*='pos-center'], [class*='pos-left']  { position: absolute !important; }
+[class*='pos-center'], [class*='pos-left']  { position: absolute; }
+
+.pos-cover {
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
 
 .pos-center {
     left: 50%;
@@ -72,6 +351,18 @@ svg {
     transform: translate( -50%, 0% );
 }
 
+.pos-center-right {
+    right: 0%;
+    top: 50%;
+    transform: translate( 0%, -50% );
+}
+
+.pos-center-top {
+    left: 50%;
+    top: 0px;
+    transform: translate( -50%, 0% );
+}
+
 .pos-left-top {
     left: 0px;
     top: 0px;
@@ -82,4 +373,20 @@ svg {
     left: 0px;
 }
 
+.pos-right-top {
+    position: absolute;
+    right: 0%;
+    top: 0;
+}
+
 .pos-rel { position: relative; }
+
+// ----------------------> Animation ---------------------- //
+.anima-fade-in {
+    animation: fade-in 0.5s forwards;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

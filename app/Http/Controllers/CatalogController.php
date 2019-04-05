@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public $data = array(
-        'title' => "Digital Catalog"
-    );
+    public $data = array();
 
     public function main() {
         return view( 'app' )->with( $this->data );

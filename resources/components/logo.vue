@@ -1,9 +1,13 @@
 <template>
     <div class="app-logo">
+        <!-- * Image -->
         <img src="images/logo.png">
 
         <div class="text-block">
+            <!-- * Name -->
             <span class="name">Indra</span>
+            
+            <!-- * Undertext -->
             <div class="undertext">Digital Catalog</div>
         </div>
     </div>
@@ -11,12 +15,13 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator'
-    @Component({ name: "app-logo", }) export default class extends Vue {}
+    @Component({ name: "app-logo", }) export default class AppLogo extends Vue {}
 </script>
 
 <style lang="scss">
     @import '~@/variables';
 
+    // ----------------------> App Logo ---------------------- //
     .app-logo {
         font-family: $font-SegoeUI;
         font-weight: 100;
@@ -46,24 +51,36 @@
             color: #d8d8d8;
         }
 
+        // Tablet style adjustments
         @media ( max-width: $size-pc ) {
             > img {
-                top: 3px;
+                top: -3px;
+                height: 140%;
             }
 
             > .text-block {
-                margin-left: 16px + 20px;
+                margin-left: 25px;
             }
 
              .name {
-                line-height: 40px;
-                font-size: 30px;
+                line-height: 20px;
+                font-size: 20px;
             }
 
             .undertext {
                 font-size: 12px;
-                line-height: 12px;
+                line-height: 10px;
             }
+        }
+
+        // Mobile style adjustments
+        @media ( max-width: $size-mobile ) {
+            > img {
+                height: 40px;
+                top: -1px;
+            }
+            .text-block { margin-left: 24px; }
+            .undertext { font-size: 10px; }
         }
     }
 </style>
