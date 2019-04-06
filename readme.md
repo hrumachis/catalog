@@ -1,6 +1,6 @@
-# <img src="https://i.imgur.com/7hvjdOa.png"  width="256">
+# <img src="https://i.imgur.com/7hvjdOa.png" width="200" align="middle"><br><img src="https://i.imgur.com/4ScAedq.jpg" width="512" align="middle">  
 
-**<big>Indra Digital Catalog</big>** <br>
+**<big>Indra Digital Catalog</big>**  <br>
 Is a modern web application with fluent experience for users to find things they need.
 
 - *Works with browsers such as **Chrome, Opera, Firefox, Microsoft Edge, Safari***.
