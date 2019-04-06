@@ -1,11 +1,11 @@
 # <img src="https://i.imgur.com/7hvjdOa.png"  width="256">
 
 **<big>Indra Digital Catalog</big>** <br>
-Is a modern web application with fluent experience for a users to find things they need.
+Is a modern web application with fluent experience for users to find things they need.
 
 - *Works with browsers such as **Chrome, Opera, Firefox, Microsoft Edge, Safari***.
 - *Supports most of mobile browsers.*
-- *High Resolution screen support.*
+- *Supports High Resolution screens.*
 - *Modern, intuitive design.*
 
 **<big>Features</big>**
@@ -21,17 +21,23 @@ Project is in alpha state. It works, has good foundation, but it's still hungry 
 
 ## Run Application Locally
 
- 1. Make sure you have  installed web development environment such <br>
-     as [WampServer](http://www.wampserver.com/en/) or [XAMPP](https://www.apachefriends.org/index.html).
- 3. **[Download](https://github.com/hrumachis/catalog)** project .zip and extract to corresponding folder. <br>
-	 WampServer:  `C:\wamp64\www\`.<br>
-	 XAMPP:  `C:\xampp\htdocs\`.
- 4. **[Download](https://getcomposer.org/Composer-Setup.exe)** [Composer](https://getcomposer.org/) dependency manager for PHP and install it.
- 5. Run your Apache server
- 6. Open [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/) Create MySQL Database<br>
-     Database: digital-catalog<br>
-	 Username: root<br>
-	 Password: *empty*
+ 1. Make sure you have installed web development environment such <br> as [WampServer](http://www.wampserver.com/en/) or [XAMPP](https://www.apachefriends.org/index.html). 
+ 2. **[Download](https://github.com/hrumachis/catalog)** project .zip and extract to     corresponding folder. <br>
+WampServer:`C:\wamp64\www\`.<br>
+XAMPP: `C:\xampp\htdocs\`.
+ 4. **[Download](https://getcomposer.org/Composer-Setup.exe)**  [Composer](https://getcomposer.org/) dependency manager for PHP and install it.
+ 5.  Run your Apache server
+ 6. Open [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
+        initialise MySQL Database BY<br>
+        Create database: "digital-catalog"<br>
+        *Username: root* <br>
+        Password: empty*
+ 7.  Open Command Prompt or Terminal in project directive.
+     And run these commands
+	
+    $ composer update
+    $ php artisan migrate
+    $ php artisan db:seedPassword: *empty*
 
 ## Application Project
 *Project created with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" width="32" align="top"> [Laravel](https://laravel.com/) framework.*
