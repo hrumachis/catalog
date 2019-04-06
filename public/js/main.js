@@ -2417,7 +2417,6 @@ AppCart = __decorate([
     Object(vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         name: "app-cart",
         components: { AppSvg: _svg_vue__WEBPACK_IMPORTED_MODULE_2__["default"] },
-        props: { href: String },
         methods: {
             formatInt: _ts_Util__WEBPACK_IMPORTED_MODULE_1__["default"].formatInt,
             numberDecimals: _ts_Util__WEBPACK_IMPORTED_MODULE_1__["default"].numberDecimals
@@ -2702,9 +2701,6 @@ let ViewCart = class ViewCart extends vue_property_decorator__WEBPACK_IMPORTED_M
             if (windowSelection)
                 windowSelection.removeAllRanges();
         }
-    }
-    goBack() {
-        this.$router.go(-1);
     }
     goTo(path) {
         this.$router.push(path);
@@ -4151,7 +4147,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "marg-bottom label" }, [
-      _c("span", [_vm._v("Got to catalog to explore more")])
+      _c("span", [_vm._v("Go to catalog to explore more")])
     ])
   }
 ]

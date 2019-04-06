@@ -135,7 +135,6 @@
         // ---> Logo
         .logo {
             padding: scaling( $pad-large );
-            padding-left: scaling( $pad-normal );
 
             @media ( max-width: $size-pc ) {
                 padding: 0;

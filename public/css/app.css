@@ -279,7 +279,6 @@ header > * {
 }
 header .logo {
   padding: 3.3333333333vw;
-  padding-left: 1.6666666667vw;
 }
 @media (max-width: 1200px) {
 header .logo {
@@ -1233,14 +1232,14 @@ button.secondary:hover {
   background-color: transparent;
   color: white;
   display: block;
-  height: 5.8333333333vw;
+  height: 4.1666666667vw;
   margin-right: 1.6666666667vw;
   padding: 0.8333333333vw;
   position: relative;
   transition: background-color 0.3s, -webkit-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, background-color 0.3s;
   transition: transform 0.2s ease-in-out, background-color 0.3s, -webkit-transform 0.2s ease-in-out;
-  width: 5.8333333333vw;
+  width: 4.1666666667vw;
 }
 
 .button-icon .icon {

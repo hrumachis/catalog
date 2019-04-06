@@ -34,12 +34,11 @@
     import AppSvg from './svg.vue'
     import { ChunkElement } from '../models/ChunkElement'
     import Chunks from '../ts/Chunks'
-import { AxiosResponse } from 'axios';
+    import { AxiosResponse } from 'axios';
     
     @Component( { 
         name: "app-cart",
         components: { AppSvg },
-        props: { href: String },
         methods: {
             formatInt: Util.formatInt,
             numberDecimals: Util.numberDecimals
@@ -52,7 +51,7 @@ import { AxiosResponse } from 'axios';
         @Prop( String ) readonly href!: string;
 
         // ---> Initialize parameters
-        mounted(): void {
+        private mounted(): void {
             if ( this.$route.name == "CartShared" ) {
                 this.isCartLoaded = false;
             }
@@ -61,20 +60,20 @@ import { AxiosResponse } from 'axios';
         }
 
         // ---> Build view
-        build(): void {
+        private build(): void {
             this.loadContent();
         }
 
         // ---> Setters
-        set isCartLoaded( value: boolean ) { this.$store.commit( 'setCartLoaded', value ); }
+        public set isCartLoaded( value: boolean ) { this.$store.commit( 'setCartLoaded', value ); }
 
         // ---> Getters || Computers
-        get getRoot(): string { return String( this.$router.currentRoute.name ); }
-        get getChunk(): ChunkElement[] { return this.$store.getters.getCartChunk; }
-        get isCartLoaded(): boolean { return this.$store.getters.isCartLoaded; }
-        get isActive() : boolean{ return this.getRoot == "Cart" || this.getRoot == "CartShared"; }
-        get totalItems(): number { return this.getChunk.length; }
-        get totalPrice(): number {
+        public get getRoot(): string { return String( this.$router.currentRoute.name ); }
+        public get getChunk(): ChunkElement[] { return this.$store.getters.getCartChunk; }
+        public get isCartLoaded(): boolean { return this.$store.getters.isCartLoaded; }
+        public get isActive() : boolean{ return this.getRoot == "Cart" || this.getRoot == "CartShared"; }
+        public get totalItems(): number { return this.getChunk.length; }
+        public get totalPrice(): number {
             let value: number = 0;
 
             for ( let i: number = 0; i < this.totalItems; i++ )
@@ -85,12 +84,12 @@ import { AxiosResponse } from 'axios';
 
         // ---> Methods
         // -> Actions
-        goTo(): void {
+        public goTo(): void {
             if ( this.href )
                 this.$router.push( this.href );
         }
 
-        loadContent(): void {
+        private loadContent(): void {
             this.$store.commit( 'incTotalLoad' );
 
             if ( this.getRoot == "CartShared" ) {
@@ -117,7 +116,7 @@ import { AxiosResponse } from 'axios';
         }
 
         // Run this when view is loaded
-        complete(): void {
+        private complete(): void {
             setTimeout( ():void => {
                     this.$store.commit( 'incTotalLoaded' );
                     this.isCartLoaded = true;

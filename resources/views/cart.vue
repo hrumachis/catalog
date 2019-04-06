@@ -46,7 +46,7 @@
                     <span>Cart is empty</span>
                 </div>
                 <div class="marg-bottom label">
-                    <span>Got to catalog to explore more</span>
+                    <span>Go to catalog to explore more</span>
                 </div>
                 <button v-on:click="goTo( '/' )" class="scale">Catalog</button>
             </div>
@@ -169,12 +169,8 @@
                     windowSelection.removeAllRanges();
             }
         }
-        
-        public goBack(): void {
-            this.$router.go( -1 );
-        }
 
-        goTo( path: string ): void {
+        public goTo( path: string ): void {
             this.$router.push( path );
         }
 

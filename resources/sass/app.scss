@@ -196,12 +196,12 @@ button {
     background-color: transparent;
     color: white;
     display: block;
-    height: scaling( 70px );
+    height: scaling( 50px );
     margin-right: scaling( $pad-normal );
     padding: scaling( 10px );
     position: relative;
     transition: transform .2s ease-in-out, background-color .3s ;
-    width: scaling( 70px );
+    width: scaling( 50px );
 
     .icon { opacity: .5; transition: opacity .3s; }
     .wrapper { height: 100%; position: relative; width: 100%; }

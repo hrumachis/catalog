@@ -17,17 +17,17 @@
         private chunks: Chunks = new Chunks();
 
         // ---> Initialize parameters
-        created(): void {
+        private created(): void {
             this.$api.setPathOrigin = this.getPathOrigin;
         }
 
-        mounted(): void{
+        private mounted(): void{
             console.log( this.getPathOrigin)
             this.build();
         }
 
         // ---> Build view
-        build(): void {
+        private build(): void {
             this.loadCookies();
         }
 
@@ -36,7 +36,7 @@
 
         // ---> Methods
         // -> Actions
-        loadCookies(): void {
+        private loadCookies(): void {
             // Initialize cookies settings
         }
     }

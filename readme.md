@@ -141,7 +141,7 @@ What style code does ***default.scss*** file contains? **default.scss*** file is
  Most of style solutions is used from UIkit.
 
 **What else about style?**<br>
-* **default.scss*** file might contain style classes which is't used, but  they can be needed later. 
+* **default.scss*** file might contain style classes which isn't used, but  they can be needed later. 
 * ***_variables.scss*** file contains all SCSS variables. 
 * What's ***function scaling()*** used for ?<br>
    We use this function to change value from *absolute length unit* to *relative length unit*, from ***pixels*** to ***vw*** . Using ***vw*** elements scale proportionally to screen dimensions. There is exception for grid element, goal is to use maximum visual space, that's why we keep their original size.

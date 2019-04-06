@@ -91,28 +91,28 @@
         private isWaiting: boolean = false; // Mainly for screen resize event
         
         // ---> Initialize parameters
-        created(): void { }
-        mounted(): void {
+        private created(): void { }
+        private mounted(): void {
             this.calcWidth();
             this.calcItemsPerScreen();
             this.build();
         }
 
         // ---> Build view
-        build(): void {
+        private build(): void {
             this.onResize();
             this.loadChunk();
         }
 
          // ---> Getters || Computers
-        get getCartChunk(): ChunkElement[] { return this.$store.getters.getCartChunk; }
-        get getNavCurrent(): string { return this.$store.getters.getNavCurrent; }
-        get isLoading(): boolean { return this.$store.getters.isLoading; }
-        get isEmpty(): boolean { return this.chunks.list.length <= 0; }
+        public get getCartChunk(): ChunkElement[] { return this.$store.getters.getCartChunk; }
+        public get getNavCurrent(): string { return this.$store.getters.getNavCurrent; }
+        public get isLoading(): boolean { return this.$store.getters.isLoading; }
+        public get isEmpty(): boolean { return this.chunks.list.length <= 0; }
 
         // ---> Methods
         // -> Events
-        onResize(): void {
+        private onResize(): void {
             window.addEventListener( 'resize', (): boolean => {
                 this.calcWidth();
                 
@@ -127,13 +127,13 @@
         }
 
         @Watch( 'getNavCurrent')
-        onNavChange(): void { this.resetChunk(); }
+        private onNavChange(): void { this.resetChunk(); }
 
         @Watch( 'sortAlphabet')
-        onSortChange(): void { this.resetChunk(); }
+        private onSortChange(): void { this.resetChunk(); }
         
         // -> Actions
-        toggleCart( n0: number, n1: number ): void {
+        public toggleCart( n0: number, n1: number ): void {
             var chunkElement: ChunkElement = ( this.chunks.list[ n0 ] )[ n1 ];
 
             if ( chunkElement.inCart ) this.$store.commit( 'removeCart', chunkElement.setInCart( false ).id );
@@ -142,19 +142,19 @@
             this.$cookies.set( 'cart', this.chunks.export( this.getCartChunk ) );
         }
 
-        setSortAlphabet( value: number ): void {
+        public setSortAlphabet( value: number ): void {
             // If values is equal then toggle off sorting
             this.sortAlphabet = this.sortAlphabet == value ? 0 : value;
         }
 
         // Reload chunks array
-        resetChunk(): void {
+        public resetChunk(): void {
             this.chunks.empty();
             this.loadChunk();
         }
 
         // Load chunk data && add data to chunks array
-        loadChunk(): void {
+        private loadChunk(): void {
             this.$store.commit( 'incTotalLoad' );
             this.$api.GET.products( ( response: any ) => {
                 // Add chunk to chunks array
@@ -169,7 +169,7 @@
         }
 
         // Wait for idle to avoid intensive activity
-        waitForIdle(): boolean {
+        private waitForIdle(): boolean {
             this.isWaiting = true;
 
             // Repeat until resizing stoped
@@ -188,7 +188,7 @@
         }
 
         // If value changed return true
-        calcItemsPerScreen(): boolean {
+        private calcItemsPerScreen(): boolean {
             var horiz: number = 100 / this.width ;
             var vertic: number = Math.ceil( window.innerHeight / Const.minGridWidth );
             var value: number = horiz * vertic * 2;
@@ -200,7 +200,7 @@
             return true;
         }
 
-        calcWidth(): void {
+        private calcWidth(): void {
             // Calculate width in percentages of one grid item
             // Minimum width: Const.minGridWidth
             var percents: number = 100 / Math.floor( window.innerWidth / Const.minGridWidth );
