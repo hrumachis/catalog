@@ -1,4 +1,4 @@
-# <img src="https://i.imgur.com/7hvjdOa.png" width="200" align="middle"><br><img src="https://i.imgur.com/4ScAedq.jpg" width="512" align="middle">  
+# <img src="https://i.imgur.com/7hvjdOa.png" width="200" align="top"><img src="https://i.imgur.com/4ScAedq.jpg" width="512" align="top">  
 
 **<big>Indra Digital Catalog</big>**  <br>
 Is a modern web application with fluent experience for users to find things they need.
