@@ -40,6 +40,8 @@ And run these commands<br>
 <code>$ php artisan migrate</code><br>
 <code>$ php artisan db:seed</code><br>
 
+**Done!**
+
 ## Application Project
 *Project created with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" width="32" align="top"> [Laravel](https://laravel.com/) framework.*
 
@@ -131,7 +133,8 @@ As mentioned before most of routing happens on client side using  **.vue** files
  <br>
  
 **<big>SCSS</big>**<br>
-In every .vue there is unique classes for individual elements. What style code does ***default.scss*** file contains? **default.scss*** file is for: <br>
+In every .vue there is unique classes for individual elements.<br>
+What style code does ***default.scss*** file contains? **default.scss*** file is for: <br>
 * HTML elements such as ***body, html, a, span, input, button ...***
 * Class library for abstract styles such as ***.flex, .margin, .position, .visibility ...*** <br>
  We use library idea from amazing project  <img src="https://getuikit.com/images/favicon.png" width="32" align="top"> **[UIkit](https://getuikit.com/)**<br>
