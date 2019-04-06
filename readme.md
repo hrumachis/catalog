@@ -35,11 +35,11 @@ XAMPP: `C:\xampp\htdocs\`.
         Password: empty*
  8. Open Command Prompt or Terminal in project directive.  
 And run these commands
-
-    $ composer update
+    <code>$ composer update
     $ php artisan key:generate
     $ php artisan migrate
     $ php artisan db:seed
+    </code>
 
 ## Application Project
 *Project created with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" width="32" align="top"> [Laravel](https://laravel.com/) framework.*
