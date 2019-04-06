@@ -29,10 +29,10 @@ XAMPP: `C:\xampp\htdocs\`.
  5. Run your Apache server
  6. Create .env file in your root. And drop there [Local Variables](https://github.com/laravel/laravel/blob/master/.env.example).
  7. Open [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
-        initialise MySQL Database BY<br>
+        initialise MySQL variables into .env file.<br>
         Create database: "digital-catalog"<br>
         *Username: root* <br>
-        Password: empty*
+        *Password: empty*
  8. Open Command Prompt or Terminal in project directive.<br>
 And run these commands<br>
 <code>$ composer update</code><br>
