@@ -35,7 +35,7 @@ XAMPP: `C:\xampp\htdocs\`.
         Password: empty*
  8. Open Command Prompt or Terminal in project directive.<br>
     And run these commands
-	
+     
     $ composer update 
     $ php artisan key:generate 
     $ php artisan migrate 
