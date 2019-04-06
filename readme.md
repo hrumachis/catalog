@@ -22,20 +22,22 @@ Project is in alpha state. It works, has good foundation, but it's still hungry 
 ## Run Application Locally
 
  1. Make sure you have installed web development environment such <br> as [WampServer](http://www.wampserver.com/en/) or [XAMPP](https://www.apachefriends.org/index.html). 
- 2. **[Download](https://github.com/hrumachis/catalog)** project .zip and extract to     corresponding folder. <br>
+ 2. **[Download](https:///hrumachis/catalog/archive/master.zip)** project .zip and extract to     corresponding folder. <br>
 WampServer:`C:\wamp64\www\`.<br>
 XAMPP: `C:\xampp\htdocs\`.
  4. **[Download](https://getcomposer.org/Composer-Setup.exe)**  [Composer](https://getcomposer.org/) dependency manager for PHP and install it.
- 5.  Run your Apache server
- 6. Open [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
+ 5. Run your Apache server
+ 6. Create .env file in your root. And drop there [Local Variables](https://github.com/laravel/laravel/blob/master/.env.example).
+ 7. Open [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
         initialise MySQL Database BY<br>
         Create database: "digital-catalog"<br>
         *Username: root* <br>
         Password: empty*
- 7.  Open Command Prompt or Terminal in project directive.
-     And run these commands
+ 8. Open Command Prompt or Terminal in project directive.<br>
+    And run these commands
 	
     $ composer update
+    $ php artisan key:generate
     $ php artisan migrate
     $ php artisan db:seedPassword: *empty*
 
