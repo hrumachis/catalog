@@ -13,6 +13,8 @@ Is a modern web application with fluent experience for a users to find things th
 - Ability to save favourite items into cart.
 - Share cart content with others.
 
+Demo version: [http://indra-digital-catalog.herokuapp.com](http://indra-digital-catalog.herokuapp.com)
+
 # For Developers
 Want to take a peek into code? Well wait, read this before jumping into rabbit hole.<br>
 Project is in alpha state. It works, has good foundation, but it's still hungry for code.
