@@ -34,8 +34,10 @@
                             </div>
 
                             <!-- * Cart Icon -->
-                            <div v-on:click="toggleCart( n0, n1 )" class="cart-it">
-                                <app-svg class="icon pos-center" name="cart"></app-svg>
+                            <div class="wrapper-round">
+                                <div v-on:click="toggleCart( n0, n1 )" class="cart-it">
+                                    <app-svg class="icon pos-center" name="cart"></app-svg>
+                                </div>
                             </div>
                             
                             <!-- * Background Image -->
@@ -257,32 +259,46 @@
                 width: 100%;
             }
 
-            // -> Wrapper
+            // -> Wrappers
             // Need for scalable gap otherwise it conflicts with image size
             .wrapper {
-                bottom: 2px;
+                bottom: 15px;
                 box-sizing: border-box;
                 display: block;
-                left: 2px;
-                overflow: hidden;
+                left: 10px;
                 position: absolute;
-                right: 2px;
-                top: 2px;
+                right: 10px;
+                top: 15px;
+            }
+            .wrapper-round {
+                background-color: $body-bg;
+                border-radius: 30px 0px 0px 0px;
+                bottom: 0;
+                padding: 8px 0 0 8px;
+                position: absolute;
+                right: 0;
+                transform: translate( 0px, 0px );
+                z-index: 4;
             }
 
             // -> Background image
             .image {
+                background-color: $col-highlight;
                 bottom: 0;
+                height: calc( 100% - 27px );
                 left: 0;
-                height: 100%;
+                max-height: calc( 100% - 27px );
+                min-width: 100%;
+                overflow: hidden;
                 pointer-events: none;
                 position: absolute;
                 right: 0;
-                top: 0;
+                top: 27px;
                 width: 100%;
 
                 img {
                     height: 100%;
+                    min-width: 100%;
                     opacity: 1;
                     width: auto;
                     transition: opacity .4s ease-in-out;
@@ -293,17 +309,14 @@
 
             // -> Cart icon
             .cart-it {
-                background-color: rgba(34, 34, 34, .8);
+                background-color: rgba(34, 34, 34, 0);
                 border-radius: 100%;
                 color: rgba( 255, 255, 255, 0.5 );
                 cursor: pointer;
-                height: 40px;
-                opacity: .9;
-                position: absolute;
-                left: 15px;
-                top: 15px;
+                height: 36px;
+                position: relative;
                 transition: transform 0.2s ease-in-out;
-                width: 40px;
+                width: 36px;
                 z-index: 6;
 
                 // -> Plastic surrounding effect
@@ -314,7 +327,7 @@
                     content: '';
                     cursor: pointer;
                     left: -2px;
-                    opacity: .6;
+                    opacity: .0;
                     pointer-events: none;
                     position: absolute;
                     right: -2px;
@@ -323,30 +336,11 @@
                     z-index: -1;
                 }
 
-                // Click ascent
-                &::after {
-                    border: solid 2px transparent;
-                    border-bottom-color: rgba(255, 255, 255, 0.2);
-                    border-radius: 1000px;
-                    bottom: 1px;
-                    content: '';
-                    left: 1px;
-                    opacity: .9;
-                    pointer-events: none;
-                    position: absolute;
-                    right: 1px;
-                    top: 1px;
-                    transform: rotate( -45deg );
-                    transition: opacity 0.3s;
-                    z-index: -1;
-                }
-
-                .app-svg { width: 50%; }
+                .app-svg { width: 60%; }
 
                 // -> Hover
                 &:hover {
                     color: white;
-                    transform: scale( 1.1 );
                     &::before { opacity: 1; }
                     &::after { border-bottom-color: $col-primary; }
                 }
@@ -354,21 +348,32 @@
 
             // -> Price
             .price {
-                background-color: rgba(34, 34, 34, 0.8);
-                border-radius: 1000px;
+                background-color: $body-bg;
+                bottom: 0;
                 box-sizing: border-box;
-                color: white;
+                color: rgba( 255, 255, 255, 0.6 );
                 font-size: $font-size-h5;
                 font-weight: 100;
-                height: 40px;
-                left: 65px;
-                opacity: .9;
-                min-width: 70px;
-                padding: 5px 15px 0px 15px;
+                height: 30px;
+                left: 0;
+                opacity: 1;
+                min-width: 50px;
+                padding: 4px 5px 0px 0px;
                 position: absolute;
                 text-align: left;
-                top: 15px;
                 z-index: 5;
+
+                &::before {
+                    border: solid 15px $body-bg;
+                    border-top-color: transparent;
+                    border-right-color: transparent;
+                    content: '';
+                    position: absolute;
+                    right: -25px; // 15 * 2 - 4
+                    top: 0px;
+                    transform: rotate( 20deg );
+                    transform-origin: 0px;
+                }
 
                 .decimals {
                     font-size: $font-size-h8;
@@ -378,20 +383,22 @@
 
             // -> Title
             .title {
-                bottom: 15px;
                 box-sizing: border-box;
-                font-size: 15px;
+                color: white;
+                font-size: $font-size-h6;
                 font-weight: 100;
-                height: 30px;
-                left: 15px;
-                line-height: 30px;
-                opacity: .9;
+                height: auto;
+                left: 0;
+                opacity: .6;
                 overflow: hidden;
                 padding: 0px;
                 position: absolute;
                 right: 15px;
                 text-align: left;
-                text-shadow: 1px 0px 2px rgba( 0, 0, 0, .9 ), -1px 0px 2px rgba( 0, 0, 0, .9 ), 0px 1px 2px rgba( 0, 0, 0, .9 ), 0px -1px 2px rgba( 0, 0, 0, .9 );
+                text-overflow: ellipsis;
+                top: 0px;
+                white-space: nowrap; 
+                width: 100%;
                 z-index: 5;
             }
             
@@ -404,23 +411,19 @@
             &.large::before { padding-top: 100%; }
 
             &:hover {
-                .title, .cart-it, .price { opacity: 1; transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out; }
+                // Item hover effect
             }
 
-            @media ( max-width: $size-pc ) {
-                .title, .cart-it, .price { opacity: 1; transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out; }
-            }
             @media ( max-width: $size-mobile ) {
-                .cart-it {
-                    left: 10px;
-                    top: 10px;
+                .wrapper {
+                    bottom: 10px;
+                    left: 5px;
+                    right: 2px;
+                    top: 5px;
                 }
 
                 .price {
                     font-size: $font-size-h6;
-                    left: 55px;
-                    padding: 10px 10px 0px 10px;
-                    top: 10px;
                 }
             }
 
@@ -430,12 +433,10 @@
                     background-color: $col-primary !important;
                     color: white;
                     opacity: 1;
-                    transform: scale( 1.1 );
                     transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
                     &::before { opacity: 1; }
                     &::after { border-bottom-color: $col-primary; }
                 }
-                .title, .price { opacity: 1; transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out; }
             }
         }
 
@@ -471,8 +472,6 @@
                 background-color: $col-highlight;
                 opacity: 1;
                 transform: scale( 1.1 );
-
-                .app-svg { color: $col-primary; }
             }
 
             &.active {
@@ -492,9 +491,14 @@
 
         // ---> Container
         .container {
+            box-sizing: border-box;
             height: 100%;
             position: relative;
             width: 100%;
+
+            @media ( max-width: $size-mobile ) {
+                padding: 4px;
+            }
         }
 
         // ---> Chunk
@@ -512,10 +516,13 @@
             &.loading .item {
                 pointer-events: none; 
 
-                .image, .cart-it, .title, .price {
+                .wrapper, .image, .cart-it, .title {
                     background-color: $col-highlight;
                     opacity: 1;
-                    > * { display: none; }
+                    > span, > .app-svg, > img { display: none; }
+                }
+                .price {
+                    > span, > .app-svg, > img { background-color: $col-highlight; color: transparent; }
                 }
                 .image img { display: block; opacity: 0; }
                 .cart-it { &::before, &::after { opacity: 0; } }

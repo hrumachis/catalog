@@ -4270,24 +4270,26 @@ var render = function() {
                           ])
                         ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "cart-it",
-                            on: {
-                              click: function($event) {
-                                return _vm.toggleCart(n0, n1)
+                        _c("div", { staticClass: "wrapper-round" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "cart-it",
+                              on: {
+                                click: function($event) {
+                                  return _vm.toggleCart(n0, n1)
+                                }
                               }
-                            }
-                          },
-                          [
-                            _c("app-svg", {
-                              staticClass: "icon pos-center",
-                              attrs: { name: "cart" }
-                            })
-                          ],
-                          1
-                        ),
+                            },
+                            [
+                              _c("app-svg", {
+                                staticClass: "icon pos-center",
+                                attrs: { name: "cart" }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "image anima-fade-in" }, [
                           _c("img", {
@@ -20963,7 +20965,7 @@ class Chunks {
             chunkElement.loaded = true;
             this.totalLoaded++;
             // Check if image is portrait
-            chunkElement.portrait = img.height > img.width ? true : false;
+            chunkElement.portrait = img.height >= img.width ? true : false;
             // Chunk loaded
             if (this.totalLoaded >= this.totalNeedToLoad) {
                 this.isProcessing = false;

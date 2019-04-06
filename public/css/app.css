@@ -520,27 +520,42 @@ header nav::before {
   width: 100%;
 }
 .app-grid .item .wrapper {
-  bottom: 2px;
+  bottom: 15px;
   box-sizing: border-box;
   display: block;
-  left: 2px;
-  overflow: hidden;
+  left: 10px;
   position: absolute;
-  right: 2px;
-  top: 2px;
+  right: 10px;
+  top: 15px;
+}
+.app-grid .item .wrapper-round {
+  background-color: #222;
+  border-radius: 30px 0px 0px 0px;
+  bottom: 0;
+  padding: 8px 0 0 8px;
+  position: absolute;
+  right: 0;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  z-index: 4;
 }
 .app-grid .item .image {
+  background-color: rgba(255, 255, 255, 0.05);
   bottom: 0;
+  height: calc( 100% - 27px );
   left: 0;
-  height: 100%;
+  max-height: calc( 100% - 27px );
+  min-width: 100%;
+  overflow: hidden;
   pointer-events: none;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 27px;
   width: 100%;
 }
 .app-grid .item .image img {
   height: 100%;
+  min-width: 100%;
   opacity: 1;
   width: auto;
   transition: opacity 0.4s ease-in-out;
@@ -550,19 +565,16 @@ header nav::before {
   width: 100%;
 }
 .app-grid .item .cart-it {
-  background-color: rgba(34, 34, 34, 0.8);
+  background-color: rgba(34, 34, 34, 0);
   border-radius: 100%;
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  height: 40px;
-  opacity: 0.9;
-  position: absolute;
-  left: 15px;
-  top: 15px;
+  height: 36px;
+  position: relative;
   transition: -webkit-transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  width: 40px;
+  width: 36px;
   z-index: 6;
 }
 .app-grid .item .cart-it::before {
@@ -572,7 +584,7 @@ header nav::before {
   content: "";
   cursor: pointer;
   left: -2px;
-  opacity: 0.6;
+  opacity: 0;
   pointer-events: none;
   position: absolute;
   right: -2px;
@@ -580,30 +592,11 @@ header nav::before {
   transition: opacity 0.3s;
   z-index: -1;
 }
-.app-grid .item .cart-it::after {
-  border: solid 2px transparent;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  border-radius: 1000px;
-  bottom: 1px;
-  content: "";
-  left: 1px;
-  opacity: 0.9;
-  pointer-events: none;
-  position: absolute;
-  right: 1px;
-  top: 1px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  transition: opacity 0.3s;
-  z-index: -1;
-}
 .app-grid .item .cart-it .app-svg {
-  width: 50%;
+  width: 60%;
 }
 .app-grid .item .cart-it:hover {
   color: white;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 .app-grid .item .cart-it:hover::before {
   opacity: 1;
@@ -612,41 +605,55 @@ header nav::before {
   border-bottom-color: #f3651e;
 }
 .app-grid .item .price {
-  background-color: rgba(34, 34, 34, 0.8);
-  border-radius: 1000px;
+  background-color: #222;
+  bottom: 0;
   box-sizing: border-box;
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 17px;
   font-weight: 100;
-  height: 40px;
-  left: 65px;
-  opacity: 0.9;
-  min-width: 70px;
-  padding: 5px 15px 0px 15px;
+  height: 30px;
+  left: 0;
+  opacity: 1;
+  min-width: 50px;
+  padding: 4px 5px 0px 0px;
   position: absolute;
   text-align: left;
-  top: 15px;
   z-index: 5;
+}
+.app-grid .item .price::before {
+  border: solid 15px #222;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  content: "";
+  position: absolute;
+  right: -25px;
+  top: 0px;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  -webkit-transform-origin: 0px;
+          transform-origin: 0px;
 }
 .app-grid .item .price .decimals {
   font-size: 10px;
   vertical-align: top;
 }
 .app-grid .item .title {
-  bottom: 15px;
   box-sizing: border-box;
-  font-size: 15px;
+  color: white;
+  font-size: 14px;
   font-weight: 100;
-  height: 30px;
-  left: 15px;
-  line-height: 30px;
-  opacity: 0.9;
+  height: auto;
+  left: 0;
+  opacity: 0.6;
   overflow: hidden;
   padding: 0px;
   position: absolute;
   right: 15px;
   text-align: left;
-  text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.9), -1px 0px 2px rgba(0, 0, 0, 0.9), 0px 1px 2px rgba(0, 0, 0, 0.9), 0px -1px 2px rgba(0, 0, 0, 0.9);
+  text-overflow: ellipsis;
+  top: 0px;
+  white-space: nowrap;
+  width: 100%;
   z-index: 5;
 }
 .app-grid .item.high::before {
@@ -662,38 +669,21 @@ header nav::before {
 .app-grid .item.large::before {
   padding-top: 100%;
 }
-.app-grid .item:hover .title, .app-grid .item:hover .cart-it, .app-grid .item:hover .price {
-  opacity: 1;
-  transition: opacity 0.4s, background-color 0.3s, color 0.3s, -webkit-transform 0.2s ease-in-out;
-  transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
-  transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-}
-@media (max-width: 1200px) {
-.app-grid .item .title, .app-grid .item .cart-it, .app-grid .item .price {
-    opacity: 1;
-    transition: opacity 0.4s, background-color 0.3s, color 0.3s, -webkit-transform 0.2s ease-in-out;
-    transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
-    transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-}
-}
 @media (max-width: 640px) {
-.app-grid .item .cart-it {
-    left: 10px;
-    top: 10px;
+.app-grid .item .wrapper {
+    bottom: 10px;
+    left: 5px;
+    right: 2px;
+    top: 5px;
 }
 .app-grid .item .price {
     font-size: 14px;
-    left: 55px;
-    padding: 10px 10px 0px 10px;
-    top: 10px;
 }
 }
 .app-grid .item.active .cart-it {
   background-color: #f3651e !important;
   color: white;
   opacity: 1;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
   transition: opacity 0.4s, background-color 0.3s, color 0.3s, -webkit-transform 0.2s ease-in-out;
   transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
   transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
@@ -703,12 +693,6 @@ header nav::before {
 }
 .app-grid .item.active .cart-it::after {
   border-bottom-color: #f3651e;
-}
-.app-grid .item.active .title, .app-grid .item.active .price {
-  opacity: 1;
-  transition: opacity 0.4s, background-color 0.3s, color 0.3s, -webkit-transform 0.2s ease-in-out;
-  transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
-  transition: opacity 0.4s, background-color 0.3s, color 0.3s, transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 .app-grid .loadmore {
   box-sizing: border-box;
@@ -742,9 +726,6 @@ header nav::before {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-.app-grid .loadmore:hover .button .app-svg {
-  color: #f3651e;
-}
 .app-grid .loadmore.active {
   opacity: 0;
   pointer-events: none;
@@ -765,9 +746,15 @@ header nav::before {
 }
 }
 .app-grid .container {
+  box-sizing: border-box;
   height: 100%;
   position: relative;
   width: 100%;
+}
+@media (max-width: 640px) {
+.app-grid .container {
+    padding: 4px;
+}
 }
 .app-grid .chunk {
   align-content: flex-start;
@@ -782,12 +769,16 @@ header nav::before {
 .app-grid .chunk.loading .item {
   pointer-events: none;
 }
-.app-grid .chunk.loading .item .image, .app-grid .chunk.loading .item .cart-it, .app-grid .chunk.loading .item .title, .app-grid .chunk.loading .item .price {
+.app-grid .chunk.loading .item .wrapper, .app-grid .chunk.loading .item .image, .app-grid .chunk.loading .item .cart-it, .app-grid .chunk.loading .item .title {
   background-color: rgba(255, 255, 255, 0.05);
   opacity: 1;
 }
-.app-grid .chunk.loading .item .image > *, .app-grid .chunk.loading .item .cart-it > *, .app-grid .chunk.loading .item .title > *, .app-grid .chunk.loading .item .price > * {
+.app-grid .chunk.loading .item .wrapper > span, .app-grid .chunk.loading .item .wrapper > .app-svg, .app-grid .chunk.loading .item .wrapper > img, .app-grid .chunk.loading .item .image > span, .app-grid .chunk.loading .item .image > .app-svg, .app-grid .chunk.loading .item .image > img, .app-grid .chunk.loading .item .cart-it > span, .app-grid .chunk.loading .item .cart-it > .app-svg, .app-grid .chunk.loading .item .cart-it > img, .app-grid .chunk.loading .item .title > span, .app-grid .chunk.loading .item .title > .app-svg, .app-grid .chunk.loading .item .title > img {
   display: none;
+}
+.app-grid .chunk.loading .item .price > span, .app-grid .chunk.loading .item .price > .app-svg, .app-grid .chunk.loading .item .price > img {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: transparent;
 }
 .app-grid .chunk.loading .item .image img {
   display: block;

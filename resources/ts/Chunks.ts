@@ -87,7 +87,7 @@ export default class Chunks {
             this.totalLoaded++;
 
             // Check if image is portrait
-            chunkElement.portrait = img.height > img.width ? true : false;
+            chunkElement.portrait = img.height >= img.width ? true : false;
 
             // Chunk loaded
             if ( this.totalLoaded >= this.totalNeedToLoad ) {
