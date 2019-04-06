@@ -13,7 +13,7 @@
         <!-- Digital Catalog Navigation Menu -->
         <nav v-if="useNav" class="hidden@mobile">
             <div class="label">
-                <span class="name">Categories</span>
+                <div class="name">Categories</div>
 
                 <div v-if="!isCategoriesLoaded" class="groups" :class="{ 'loading': !isCategoriesLoaded }">
                     <li v-for="(i, n) in 4" :key="n"><span>0</span></li>
@@ -158,33 +158,34 @@
             position: absolute;
 
             .label {
+                align-items: baseline;
+                display: flex;
                 margin: 0 scaling( $pad-normal );
             }
 
             .label > .name {
                 font-size: scaling( $font-size-h7 );
+                margin-right: scaling( $pad-normal );
                 opacity: 0.4;
                 text-transform: uppercase;
                 vertical-align: middle;
             }
 
             .label > .groups {
-                display: inline-block;
                 margin: 0;
                 padding: 0;
                 list-style: none;
-                vertical-align: middle;
 
                 li {
                     background-color: transparent;
                     display: inline-block;
                     cursor: pointer;
                     opacity: .7;
-                    margin-left: scaling( 8px );
                     min-width: scaling( 30px );
                     padding: scaling( 4px ) scaling( 8px );
                     text-align: center;
 
+                    &:not( :first-child) { margin-left: scaling( 8px ); }
                     &:hover, &.active {
                         background-color: $col-highlight;
                         opacity: 1;

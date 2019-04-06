@@ -3429,7 +3429,7 @@ var render = function() {
       _vm.useNav
         ? _c("nav", { staticClass: "hidden@mobile" }, [
             _c("div", { staticClass: "label" }, [
-              _c("span", { staticClass: "name" }, [_vm._v("Categories")]),
+              _c("div", { staticClass: "name" }, [_vm._v("Categories")]),
               _vm._v(" "),
               !_vm.isCategoriesLoaded
                 ? _c(

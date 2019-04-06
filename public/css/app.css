@@ -301,30 +301,33 @@ header nav {
   position: absolute;
 }
 header nav .label {
+  align-items: baseline;
+  display: flex;
   margin: 0 1.6666666667vw;
 }
 header nav .label > .name {
   font-size: 1vw;
+  margin-right: 1.6666666667vw;
   opacity: 0.4;
   text-transform: uppercase;
   vertical-align: middle;
 }
 header nav .label > .groups {
-  display: inline-block;
   margin: 0;
   padding: 0;
   list-style: none;
-  vertical-align: middle;
 }
 header nav .label > .groups li {
   background-color: transparent;
   display: inline-block;
   cursor: pointer;
   opacity: 0.7;
-  margin-left: 0.6666666667vw;
   min-width: 2.5vw;
   padding: 0.3333333333vw 0.6666666667vw;
   text-align: center;
+}
+header nav .label > .groups li:not(:first-child) {
+  margin-left: 0.6666666667vw;
 }
 header nav .label > .groups li:hover, header nav .label > .groups li.active {
   background-color: rgba(255, 255, 255, 0.05);
