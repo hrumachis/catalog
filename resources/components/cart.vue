@@ -34,6 +34,7 @@
     import AppSvg from './svg.vue'
     import { ChunkElement } from '../models/ChunkElement'
     import Chunks from '../ts/Chunks'
+import { AxiosResponse } from 'axios';
     
     @Component( { 
         name: "app-cart",
@@ -92,12 +93,12 @@
         loadContent(): void {
             this.$store.commit( 'incTotalLoad' );
 
-            if ( this.$route.name == "CartShared" ) {
+            if ( this.getRoot == "CartShared" ) {
                 let sharedCartBase64: string = this.$route.params.pathMatch;
 
                 // Get data with id array in base64 format. Import it
-                this.$api.GET.productsByBase64( ( response: any ) => {
-                    if ( response[ 0 ] != null ) {
+                this.$api.GET.productsByBase64( ( response: AxiosResponse ) => {
+                    if ( !Array.isArray( response ) ) {
                         this.$store.commit( 'setCartChunk', this.chunks.import( response.data ) );
                         this.$cookies.set( 'cart', sharedCartBase64 );
                     }
