@@ -20810,10 +20810,10 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/sass/default.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/default.scss ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -21272,14 +21272,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/main.ts ./resources/sass/app.scss ***!
-  \***********************************************************/
+/*!***************************************************************!*\
+  !*** multi ./resources/main.ts ./resources/sass/default.scss ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\wamp64\www\catalog\resources\main.ts */"./resources/main.ts");
-module.exports = __webpack_require__(/*! C:\wamp64\www\catalog\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\catalog\resources\sass\default.scss */"./resources/sass/default.scss");
 
 
 /***/ })

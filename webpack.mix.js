@@ -14,7 +14,7 @@ const mix = require( 'laravel-mix' );
 mix
     .options({ extractVueStyles: true })
     .ts( 'resources/main.ts', 'public/js' )
-    .sass( 'resources/sass/app.scss', 'public/css' )
+    .sass( 'resources/sass/default.scss', 'public/css' )
     .webpackConfig( {
         module: {
             rules: [
