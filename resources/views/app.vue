@@ -8,13 +8,11 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import Chunks from '../ts/Chunks'
 
     @Component( {
         name: "app"
     } )
     export default class App extends Vue {
-        private chunks: Chunks = new Chunks();
 
         // ---> Initialize parameters
         private created(): void {

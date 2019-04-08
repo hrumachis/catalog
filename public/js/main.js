@@ -2581,7 +2581,6 @@ AppSvg = __decorate([
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
-/* harmony import */ var _ts_Chunks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ts/Chunks */ "./resources/ts/Chunks.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2589,12 +2588,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
-
 let App = class App extends vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__["Vue"] {
-    constructor() {
-        super(...arguments);
-        this.chunks = new _ts_Chunks__WEBPACK_IMPORTED_MODULE_1__["default"]();
-    }
     // ---> Initialize parameters
     created() {
         this.$api.setPathOrigin = this.getPathOrigin;
